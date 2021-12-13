@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import Header from './Header';
 
 // Another way to write props.children - destructuring
 // Note children is an "in-built" prop
@@ -6,6 +7,7 @@ import PropTypes from 'prop-types';
 export default function Page({ children, cool }) {
     return (
         <div>
+            <Header />
             <h2>Page component</h2>
             {children}
             <div>{cool}</div>
