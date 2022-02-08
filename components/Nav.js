@@ -10,3 +10,6 @@ export default function Nav() {
         </nav>
     );
 }
+
+//use nextjs Link tag for pages within your app,
+//use regular a tag for links leading outside your website

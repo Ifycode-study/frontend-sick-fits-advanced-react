@@ -1,9 +1,6 @@
 import PropTypes from 'prop-types';
 import Header from './Header';
 
-// Another way to write props.children - destructuring
-// Note children is an "in-built" prop
-
 export default function Page({ children, cool }) {
     return (
         <div>
@@ -19,6 +16,9 @@ Page.propTypes = {
     cool: PropTypes.string,
     children: PropTypes.any
 }
+
+// Another way to write props.children - destructuring
+// Note children is an "in-built" prop
 
 /*---------------------------------------------------------
 Elements in <Page> in e.g. index.js has to be more than one. 
