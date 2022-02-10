@@ -1,13 +1,30 @@
 import useForm from '../lib/useForm';
+import Form from './styles/Form';
 
 export default function CreateProduct() {
   const { inputs, handleChange, resetForm, clearForm } = useForm({
+    image: '',
     name: 'A product',
-    price: 3450
+    price: 3450,
+    description: 'A product description'
   });
 
   return (
-    <form>
+    <Form onSubmit={(e) => {
+      e.preventDefault();
+      console.log(inputs);
+    }}>
+      <fieldset>
+      <label htmlFor="image">
+       Upload Image:
+          <input 
+            required
+            type="file" 
+            id="image" 
+            name="image" 
+            onChange={handleChange}
+          />
+      </label>
       <label htmlFor="name">
         Name:
           <input 
@@ -30,20 +47,35 @@ export default function CreateProduct() {
             onChange={handleChange}
           />
       </label>
-      <button 
-        type="button" 
-        onClick={clearForm}
-      > Clear form </button>
-      <button 
-        type="button" 
-        onClick={resetForm}
-      > Reset form </button>
-    </form>
+      <label htmlFor="description">
+        Description:
+          <textarea
+            id="description" 
+            name="description" 
+            placeholder="Description"
+            value={inputs.description}
+            onChange={handleChange}
+          />
+      </label>
+      </fieldset>
+      <button type="submit"> + Add Product </button>
+    </Form>
   );
 }
 
-// Once you set type to button for buttons, you don't need e.preventDefault()
 
+
+//------------------------------------------
+
+      // <button 
+      //   type="button" 
+      //   onClick={clearForm}
+      // > Clear form </button>
+      // <button 
+      //   type="button" 
+      //   onClick={resetForm}
+      // > Reset form </button>
+// Once you set type to button for buttons, you don't need e.preventDefault()
 
 
 //-----------------------------------------
