@@ -1,12 +1,20 @@
 
-export default function IndexPage() {
-  return (
-    <>
-      <div>Hello!</div>
-      <p>you</p>
-    </>
-  );
-}
+export { default } from './products';
+
+// index page and product page will now have same content
+
+
+
+//--------------------------------------------
+
+// export default function IndexPage() {
+//   return (
+//     <>
+//       <div>Hello!</div>
+//       <p>you</p>
+//     </>
+//   );
+// }
 
 /*---------------------------------------------
 import Page from '../components/Page';
