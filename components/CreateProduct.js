@@ -4,6 +4,7 @@ import useForm from '../lib/useForm';
 import DisplayError from './ErrorMessage';
 import { ALL_PRODUCTS_QUERY } from './Products';
 import Form from './styles/Form';
+import Router from 'next/router';
 
 const CREATE_PRODUCT_MUTATION = gql`
   mutation CREATE_PRODUCT_MUTATION(
@@ -53,8 +54,12 @@ export default function CreateProduct() {
       console.log(inputs);
       // Submit input from fields to the backend
       const response = await createProduct();
-      //console.log(response);
+      console.log(response);
       clearForm();
+      //Go to that one product's page
+      Router.push({
+        pathname: `/product/${response.data.createProduct.id}`
+      });
     }}>
       <DisplayError error={error} />
       <fieldset disabled={loading} aria-busy={loading}>
