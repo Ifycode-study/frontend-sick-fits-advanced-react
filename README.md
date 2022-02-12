@@ -1,5 +1,5 @@
 # Frontend (Advanced React)
-Frontend for sickfits app from advanced React + GraphQL course by wesbos with React and Nextjs.
+Frontend for sickfits app from advanced React + GraphQL course by wesbos with React and Nextjs. Find the [backend repo for this project here](https://github.com/follow-course/backend-sick-fits-advanced-react).
 
 ## Apollo client setup
 Summary: Find apollo setup in withData.js file. Inside _app.js, wrap MyApp function with withData. Restart your browser, app should work fine and Apollo client should now appear in the dev tools also.
